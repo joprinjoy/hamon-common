@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+
+    <script>    
+
+
+$(document).ready(function(){
+  $("button").click(function(){
+
+
+    $.ajax({
+        url: "https://api.thecatapi.com/v1/images/search",
+
+        type:'GET',
+         success: function(result){
+
+            $('#poocha').attr('src',result[0].url);
+            
+        }
+
+    });
+
+  });
+});
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+   <h1>Let Poochaism win!</h1>
+   <img id="poocha" src="https://cdn2.thecatapi.com/images/bep.jpg" style="height: 400px" >
+
+    <button type="button"> Click me</button>
+
+
+    
+</body>
+</html>
